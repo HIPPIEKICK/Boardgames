@@ -10,6 +10,9 @@ import styled from "styled-components/macro"
 import { Games } from "./components/Games"
 import { Header } from "./components/Header"
 import { SearchBar } from "./components/SearchBar"
+import { Rating } from "./components/Rating"
+import { Year } from "./components/Year"
+
 
 const reducer = combineReducers({
   ui: ui.reducer,
@@ -23,8 +26,13 @@ export const App = () => {
     <Provider store={store}>
       <Container>
         <Header />
-        <SearchBar />
-
+        <SearchContainer>
+          <SearchBar />
+          or
+        <Rating />
+          or
+        <Year />
+        </SearchContainer>
         <Games />
 
       </Container>
@@ -39,4 +47,13 @@ flex-direction: column;
 align-items: center;
 background-color: goldenrod;
 min-height: 600px;
+`
+
+const SearchContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgba(255,255,255, 0.2);
+width: 400px;
+margin: 10px;
 `

@@ -9,7 +9,8 @@ export const Games = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchGames("/boardgames"))
-  }, [])
+  }, [dispatch])
+  //why tho?
 
   const gamesList = useSelector(state => state.games.games)
   console.log(gamesList)
@@ -23,6 +24,7 @@ export const Games = () => {
             <GameContainerRow>
               <GameContainerColumn>
                 <GameInfo><Fat>Year: </Fat> {game.year}</GameInfo>
+                <GameInfo><Fat>Rank: </Fat> {game.rank} </GameInfo>
                 <GameInfo><Fat>Average rating: </Fat> {game.average}</GameInfo>
                 <GameInfo><Fat>Users rated: </Fat> {game.users_rated}</GameInfo>
               </GameContainerColumn>

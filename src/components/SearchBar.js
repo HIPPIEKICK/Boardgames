@@ -1,18 +1,20 @@
 import React, { useState } from "react"
-import { useDispatch } from "react-redux"
-import { fetchGames } from '../reducers/games'
+import { useDispatch, useSelector } from "react-redux"
+import { fetchGames, games } from '../reducers/games'
 import styled from "styled-components"
 
 export const SearchBar = () => {
-  const [query, setQuery] = useState("")
+  // const [query, setQuery] = useState("")
   const dispatch = useDispatch()
+  const query = useSelector((store) => store.games.query)
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if (query.length > 0) {
       dispatch(fetchGames(`/boardgames?name=${query}`))
-      setQuery("")
+      // dispatch(games.actions.setQuery(""))
       //To empty input-field after submit
+      // It's not compatible with "next-page"
     }
   }
 
@@ -21,7 +23,7 @@ export const SearchBar = () => {
       <Label className="input-label">
         <Input type="text"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => dispatch(games.actions.setQuery(event.target.value))}
           placeholder="Search for game..." />
         <Button type="submit"><span role="img" aria-label="add-button">🔎</span></Button>
       </Label>
@@ -31,7 +33,7 @@ export const SearchBar = () => {
 }
 
 const Form = styled.form`
-padding: 10px;
+padding: 10px 10px 0 10px;
 width: 380px;
 
 `
@@ -43,7 +45,7 @@ const Label = styled.label`
 const Input = styled.input`
 font-size: 14px;
 padding: 5px;
-margin: 5px 5px 5px 0px;
+margin: 0 0 0 6px;
 width: 320px;
 `
 

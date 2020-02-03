@@ -28,10 +28,11 @@ export const App = () => {
         <Header />
         <SearchContainer>
           <SearchBar />
-          or
-        <Rating />
-          or
-        <Year />
+          <RankAndYear>
+            <Rating />
+
+            <Year />
+          </RankAndYear>
         </SearchContainer>
         <Games />
 
@@ -47,13 +48,20 @@ flex-direction: column;
 align-items: center;
 background-color: goldenrod;
 min-height: 600px;
+font-family: 'Roboto', sans-serif;
 `
 
 const SearchContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: rgba(255,255,255, 0.2);
+background-color: rgba(255,255,255, 0.3);
 width: 400px;
+margin: 10px;
+font-family: 'Roboto', sans-serif;
+`
+
+const RankAndYear = styled.div`
+display: flex;
 margin: 10px;
 `

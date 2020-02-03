@@ -5,11 +5,15 @@ export const games = createSlice({
   name: "games",
   initialState: {
     games: [],
-    savedGames: []
+    savedGames: [],
+    query: ""
   },
   reducers: {
     setGames: (state, action) => {
       state.games = action.payload
+    },
+    setQuery: (state, action) => {
+      state.query = action.payload
     },
     saveGame: (state, action) => {
       // FYLL PÅ state.savedGames.push

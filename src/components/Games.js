@@ -43,7 +43,7 @@ display:flex;
 flex-direction: column;
 width: 400px;
 height: auto;
-padding-bottom: 10px;
+padding-bottom: 20px;
 background: lightcyan;
 margin: 5px;
 `

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { games } from "reducers/games"
 import { fetchGames } from '../reducers/games'
 import styled from "styled-components"
@@ -13,9 +13,16 @@ export const NextButton = () => {
   // Test:
   // 2 should be default, since it's action of "next-button"
 
+  const query = useSelector((store) => store.games.query)
+
   const handleClick = () => {
-    pageNumber += 1
-    dispatch(fetchGames(`/boardgames?page=${pageNumber}`))
+    if (query) {
+      pageNumber += 1
+      dispatch(fetchGames(`/boardgames?name=${query}&page=${pageNumber}`))
+    } else {
+      pageNumber += 1
+      dispatch(fetchGames(`/boardgames?page=${pageNumber}`))
+    }
     //only works with general fetch, but not after query for example
   }
 

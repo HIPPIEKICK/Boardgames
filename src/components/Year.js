@@ -36,23 +36,24 @@ export const Year = () => {
 }
 
 const Form = styled.form`
-/* padding: 10px; */
-width: 380px;
+padding: 10px;
+width: 160px;
 margin: 5px;
 display:flex;
-justify-content: center;
-background-color: rgba(255,255,255, 0.2);
+background-color: rgba(255,255,255, 0.5);
 
 `
 
 const Label = styled.label`
-
+color: darkslategrey;
+font-weight: bold;
 `
 
 const Select = styled.select`
 font-size: 14px;
 padding: 5px;
 margin: 5px;
+background-color: white;
 `
 
 const Button = styled.button`

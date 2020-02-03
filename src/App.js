@@ -3,9 +3,6 @@ import { Provider } from "react-redux"
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 import { ui } from "reducers/ui"
 import { games } from "reducers/games"
-// import { Product } from "components/Product"
-// import { LoadingIndicator } from 'components/LoadingIndicator'
-// import { SavedProducts } from 'components/SavedProducts'
 import styled from "styled-components/macro"
 import { Games } from "./components/Games"
 import { Header } from "./components/Header"
@@ -30,14 +27,11 @@ export const App = () => {
           <SearchBar />
           <RankAndYear>
             <Rating />
-
             <Year />
           </RankAndYear>
         </SearchContainer>
         <Games />
-
       </Container>
-
     </Provider>
   )
 }

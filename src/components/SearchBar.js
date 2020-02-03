@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchGames, games } from '../reducers/games'
 import styled from "styled-components"
 
 export const SearchBar = () => {
-  // const [query, setQuery] = useState("")
   const dispatch = useDispatch()
   const query = useSelector((store) => store.games.query)
 
@@ -14,7 +13,7 @@ export const SearchBar = () => {
       dispatch(fetchGames(`/boardgames?name=${query}`))
       // dispatch(games.actions.setQuery(""))
       //To empty input-field after submit
-      // It's not compatible with "next-page"
+      //Commented out because it's not compatible with "next-page" for query
     }
   }
 
@@ -35,11 +34,9 @@ export const SearchBar = () => {
 const Form = styled.form`
 padding: 10px 10px 0 10px;
 width: 380px;
-
 `
 
 const Label = styled.label`
-
 `
 
 const Input = styled.input`

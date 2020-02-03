@@ -14,9 +14,6 @@ export const games = createSlice({
     },
     setQuery: (state, action) => {
       state.query = action.payload
-    },
-    saveGame: (state, action) => {
-      // FYLL PÅ state.savedGames.push
     }
   }
 })
@@ -29,7 +26,6 @@ export const fetchGames = (path) => {
       .then(json => {
         dispatch(games.actions.setGames(json))
         dispatch(ui.actions.setLoading(false))
-        console.log(json)
       })
   }
 }

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styled from "styled-components/macro"
-// import { SaveButton } from "./SaveButton"
 import { fetchGames } from '../reducers/games'
 import { NextButton } from "./NextButton"
 
@@ -10,10 +9,8 @@ export const Games = () => {
   useEffect(() => {
     dispatch(fetchGames("/boardgames"))
   }, [dispatch])
-  //why tho?
 
   const gamesList = useSelector(state => state.games.games)
-  console.log(gamesList)
 
   return (
     <>
@@ -78,6 +75,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 `
+
 const GameInfo = styled.p`
 margin: 0;
 font-size: 14px;

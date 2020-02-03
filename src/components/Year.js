@@ -41,7 +41,6 @@ width: 160px;
 margin: 5px;
 display:flex;
 background-color: rgba(255,255,255, 0.5);
-
 `
 
 const Label = styled.label`

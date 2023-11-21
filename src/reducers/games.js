@@ -21,7 +21,7 @@ export const games = createSlice({
 export const fetchGames = (path) => {
   return dispatch => {
     dispatch(ui.actions.setLoading(true))
-    fetch(`https://boardgames-matilda-arvidsson.herokuapp.com${path}`)
+    fetch(`https://express-demo-bu5u.onrender.com${path}`)
       .then(res => res.json())
       .then(json => {
         dispatch(games.actions.setGames(json))
